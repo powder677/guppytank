@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>The Guppy Tank - Brutal Business Reality Checks</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+   <style>
+      body {
+         font-family: 'Inter', sans-serif;
+         background-color: #111827;
+         color: #F3F4F6;
+      }
+
+      .bg-black-custom {
+         background-color: #000000;
+      }
+
+      .text-red-accent {
+         color: #EF4444;
+      }
+
+      .bg-red-accent {
+         background-color: #EF4444;
+      }
+
+      .border-red-accent {
+         border-color: #EF4444;
+      }
+
+      .stat-card {
+         background-color: #1F2937;
+         border: 1px solid #374151;
+         padding: 1.5rem;
+         border-radius: 0.75rem;
+         text-align: center;
+         transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .stat-card:hover {
+         transform: translateY(-4px);
+         box-shadow: 0 10px 30px rgba(239, 68, 68, 0.2);
+      }
+
+      .form-input {
+         background-color: #374151;
+         border: 1px solid #4B5563;
+         color: #F3F4F6;
+         border-radius: 0.5rem;
+         padding: 0.75rem 1rem;
+         width: 100%;
+         transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .form-input:focus {
+         outline: none;
+         border-color: #EF4444;
+         box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+      }
+
+      .form-input::placeholder {
+         color: #9CA3AF;
+      }
+
+      .submit-btn {
+         background: linear-gradient(135deg, #EF4444, #DC2626);
+         color: #FFFFFF;
+         font-weight: 700;
+         padding: 1rem 2rem;
+         border-radius: 0.5rem;
+         transition: all 0.3s ease;
+         text-transform: uppercase;
+         position: relative;
+         overflow: hidden;
+         display: inline-block;
+      }
+
+      .submit-btn:hover {
+         background: linear-gradient(135deg, #DC2626, #B91C1C);
+         transform: translateY(-2px);
+         box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+      }
+
+      .submit-btn:active {
+         transform: translateY(0);
+      }
+
+      .section-title {
+         font-size: 2.25rem;
+         font-weight: 900;
+         text-align: center;
+         margin-bottom: 2rem;
+         background: linear-gradient(135deg, #FFFFFF, #D1D5DB);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         background-clip: text;
+      }
+
+      .section-subtitle {
+         font-size: 1.25rem;
+         text-align: center;
+         color: #D1D5DB;
+         margin-bottom: 4rem;
+         max-width: 48rem;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      .hero-text {
+         animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+         from {
+            opacity: 0;
+            transform: translateY(30px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      .pulse-glow {
+         animation: pulse-red 2s infinite;
+      }
+
+      @keyframes pulse-red {
+
+         0%,
+         100% {
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+         }
+
+         50% {
+            box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+         }
+      }
+
+      .framework-card {
+         background: linear-gradient(135deg, #1F2937, #111827);
+         border: 1px solid #374151;
+         padding: 1.5rem;
+         border-radius: 0.75rem;
+         transition: all 0.3s ease;
+         position: relative;
+         overflow: hidden;
+      }
+
+      .framework-card::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: -100%;
+         width: 100%;
+         height: 100%;
+         background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.1), transparent);
+         transition: left 0.5s;
+      }
+
+      .framework-card:hover::before {
+         left: 100%;
+      }
+
+      .framework-card:hover {
+         border-color: #EF4444;
+         transform: translateY(-2px);
+      }
+
+      .testimonial-card {
+         background: linear-gradient(135deg, #374151, #1F2937);
+         padding: 2rem;
+         border-radius: 1rem;
+         border-left: 4px solid #EF4444;
+         transition: transform 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+         transform: scale(1.02);
+      }
+
+      .countdown-timer {
+         background: linear-gradient(135deg, #EF4444, #DC2626);
+         padding: 1rem;
+         border-radius: 0.5rem;
+         text-align: center;
+         margin: 1rem 0;
+      }
+
+      .floating-cta {
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         z-index: 1000;
+         opacity: 0;
+         transform: translateY(100px);
+         transition: all 0.3s ease;
+      }
+
+      .floating-cta.visible {
+         opacity: 1;
+         transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+         .floating-cta {
+            bottom: 10px;
+            right: 10px;
+         }
+      }
+   </style>
+</head>
+
+<body class="bg-black-custom">
+
+   <!-- Floating CTA -->
+   <div class="floating-cta" id="floatingCta">
+      <a href="https://buy.stripe.com/00w00i3JX6M0d0jeP3bbG04" target="_blank" rel="noopener noreferrer" class="submit-btn pulse-glow">
+         DESTROY MY IDEA ($97)
+      </a>
+   </div>
+
+   <!-- Header & Hero Section -->
+   <header class="bg-black-custom py-20 px-4">
+      <div class="container mx-auto text-center">
+         <h1 class="hero-text text-4xl md:text-6xl font-black uppercase tracking-wider text-white">Your Business Idea <span class="text-red-accent">Probably Sucks.</span></h1>
+         <p class="hero-text mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Let me prove it to you before you waste years of your life and thousands of dollars finding out the hard way.</p>
+         <div class="hero-text mt-12 p-6 max-w-3xl mx-auto bg-gray-900 rounded-lg border border-gray-700">
+            <p class="text-md md:text-lg text-gray-200">"I walked away from <span class="font-bold text-white">$15K in Amazon sales</span> because I could see the writing on the wall. My scoring system predicted exactly how it would fail - and it did. Now I use that same brutal assessment to save other entrepreneurs from the same costly mistakes."</p>
+         </div>
+         <div class="mt-8">
+            <button onclick="scrollToForm()" class="submit-btn text-lg px-8 py-4">
+               GET BRUTALLY HONEST FEEDBACK NOW
+            </button>
+         </div>
+      </div>
+   </header>
+
+   <!-- Stats Section -->
+   <section class="py-20 bg-gray-900">
+      <div class="container mx-auto px-4">
+         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8">
+            <div class="stat-card">
+               <p class="text-4xl font-black text-red-accent">97%</p>
+               <p class="mt-2 text-gray-400">Ideas We Reject</p>
+            </div>
+            <div class="stat-card">
+               <p class="text-4xl font-black text-white">$847K</p>
+               <p class="mt-2 text-gray-400">Avg. Money Saved</p>
+            </div>
+            <div class="stat-card">
+               <p class="text-4xl font-black text-white">2.3</p>
+               <p class="mt-2 text-gray-400">Years Saved</p>
+            </div>
+            <div class="stat-card">
+               <p class="text-4xl font-black text-white">72</p>
+               <p class="mt-2 text-gray-400">Hour Turnaround</p>
+            </div>
+            <div class="stat-card col-span-2 md:col-span-1 lg:col-span-1">
+               <p class="text-4xl font-black text-red-accent">40/100</p>
+               <p class="mt-2 text-gray-400">My Own "Failed" Business</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Warning Section -->
+   <section class="py-20 bg-black-custom">
+      <div class="container mx-auto px-4 max-w-4xl">
+         <div class="border-4 border-red-accent p-8 rounded-lg text-center pulse-glow">
+            <h2 class="text-3xl md:text-4xl font-black text-red-accent">⚠️ FAIR WARNING ⚠️</h2>
+            <p class="mt-6 text-lg text-gray-300">This is NOT a validation service. I will not sugarcoat anything. I will not tell you what you want to hear. If your idea is bad (and statistically, it probably is), I will tell you exactly:</p>
+            <ul class="mt-6 text-left space-y-4 max-w-md mx-auto">
+               <li class="flex items-start"><span class="text-red-accent font-bold mr-3">→</span> Why it will fail</li>
+               <li class="flex items-start"><span class="text-red-accent font-bold mr-3">→</span> How much money you'll lose</li>
+               <li class="flex items-start"><span class="text-red-accent font-bold mr-3">→</span> What timeline you're looking at for collapse</li>
+               <li class="flex items-start"><span class="text-red-accent font-bold mr-3">→</span> Why you should thank me for saving you from yourself</li>
+            </ul>
+            <p class="mt-8 font-bold text-xl text-white">Only submit if you can handle the brutal truth.</p>
+            <div class="countdown-timer mt-6">
+               <p class="text-white font-bold">⏰ LIMITED TIME: Next 24 hours only</p>
+               <p class="text-sm">After that, price goes up to $197</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- My Story Section -->
+   <section class="py-20 bg-gray-900">
+      <div class="container mx-auto px-4 max-w-4xl">
+         <h2 class="section-title">Why I'm Qualified to Destroy Your Dreams</h2>
+         <div class="text-lg text-gray-300 space-y-6 text-left">
+            <p>I built a 9-layer business scoring system after my own Amazon arbitrage 'success' nearly cost me $4K when Amazon lost my inventory. Here's what happened:</p>
+            <ul class="list-disc list-inside space-y-3 pl-4">
+               <li>Did <span class="font-bold text-white">$15K in sales</span> in my first few months.</li>
+               <li>Made about <span class="font-bold text-white">$1K profit</span> (terrible margins after all costs).</li>
+               <li>Was planning to go all-in with a huge order.</li>
+               <li>Amazon lost/misplaced a <span class="font-bold text-red-accent">$4K inventory box</span>.</li>
+               <li>Spent months in disputes; they demanded receipts for clearance items bought all over town.</li>
+               <li>Found the box 2 months later when the season was over.</li>
+               <li>Realized this 'business' was completely at Amazon's mercy.</li>
+            </ul>
+            <p class="pt-4 border-t border-gray-700">My scoring system gave Amazon arbitrage a <span class="font-black text-red-accent text-2xl">40/100</span> - and I lived exactly why. Now I use that same system to score other business ideas before entrepreneurs get burned.</p>
+         </div>
+      </div>
+   </section>
+
+   <!-- Scoring System Preview -->
+   <section class="py-20 bg-black-custom">
+      <div class="container mx-auto px-4">
+         <h2 class="section-title">The 9-Layer Business Destruction Framework</h2>
+         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="framework-card">
+               <h3 class="font-bold text-xl text-white">1. Market Reality Check</h3>
+               <p class="text-gray-400 mt-2">Is there actually demand?</p>
+            </div>
+            <div class="framework-card">
+               <h3 class="font-bold text-xl text-white">2. Competition Analysis</h3>
+               <p class="text-gray-400 mt-2">Who will crush you?</p>
+            </div>
+            <div class="framework-card">
+               <h3 class="font-bold text-xl text-white">3. Economic Viability</h3>
+               <p class="text-gray-400 mt-2">Can you actually make money?</p>
+            </div>
+            <div class="framework-card">
+               <h3 class="font-bold text-xl text-white">4. Operation Complexity</h3>
+               <p class="text-gray-400 mt-2">What will actually break?</p>
+            </div>
+            <div class="framework-card">
+               <h3 class="font-bold text-xl text-white">5. Risk Assessment</h3>
+               <p class="text-gray-400 mt-2">What will kill you first?</p>
+            </div>
+            <div class="framework-card">
+               <h3 class="font-bold text-xl text-white">6. 3-5 Year Outlook</h3>
+               <p class="text-gray-400 mt-2">Your probable death timeline.</p>
+            </div>
+            <div class="framework-card">
+               <h3 class="font-bold text-xl text-white">7. Scalability Analysis</h3>
+               <p class="text-gray-400 mt-2">Where will you plateau?</p>
+            </div>
+            <div class="framework-card">
+               <h3 class="font-bold text-xl text-white">8. Exit Strategy</h3>
+               <p class="text-gray-400 mt-2">How trapped will you be?</p>
+            </div>
+            <div class="framework-card bg-red-accent border-red-accent text-white">
+               <h3 class="font-bold text-xl">9. Final Verdict</h3>
+               <p class="mt-2">Score out of 100 + brutal recommendation.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Guru Takedown Section -->
+   <section class="py-20 bg-gray-900">
+      <div class="container mx-auto px-4 max-w-4xl">
+         <h2 class="section-title">Even the "Experts" Fail My Test</h2>
+         <p class="section-subtitle">Here are some recent guru business scores.</p>
+         <div class="space-y-6">
+            <div class="testimonial-card">
+               <p class="text-lg font-bold text-white">YouTube Affiliate Marketing Courses: <span class="text-red-accent font-black">30/100</span></p>
+               <p class="text-gray-400 italic">"Monetizing dreams, not outcomes"</p>
+            </div>
+            <div class="testimonial-card">
+               <p class="text-lg font-bold text-white">Amazon FBA Masterclasses: <span class="text-red-accent font-black">40/100</span></p>
+               <p class="text-gray-400 italic">"No moat, algorithm dependency, margin compression"</p>
+            </div>
+            <div class="testimonial-card">
+               <p class="text-lg font-bold text-white">Dropshipping 'Systems': <span class="text-red-accent font-black">25/100</span></p>
+               <p class="text-gray-400 italic">"Race to the bottom with Chinese suppliers"</p>
+            </div>
+         </div>
+         <p class="mt-8 text-center text-lg text-gray-300">"My own system is so brutal, it gave me 30/100 when I tried to become a guru myself. If I can't cheat my own system, neither can they."</p>
+      </div>
+   </section>
+
+   <!-- Assessment Form Section -->
+   <section id="submit" class="py-20 bg-black-custom">
+      <div class="container mx-auto px-4 max-w-2xl">
+         <h2 class="section-title">Submit Your Idea for Destruction</h2>
+         <div id="assessmentForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+               <div>
+                  <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+               </div>
+               <div>
+                  <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Your Email</label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+               </div>
+            </div>
+            <div>
+               <label for="idea_name" class="block text-sm font-medium text-gray-300 mb-1">Business Idea Name</label>
+               <input type="text" id="idea_name" name="idea_name" class="form-input" placeholder="e.g., 'Uber for Cats'" required>
+            </div>
+            <div>
+               <label for="elevator_pitch" class="block text-sm font-medium text-gray-300 mb-1">30-Second Elevator Pitch</label>
+               <textarea id="elevator_pitch" name="elevator_pitch" rows="3" class="form-input" placeholder="Briefly describe your business idea." required>
