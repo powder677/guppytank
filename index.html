@@ -46,26 +46,6 @@
          box-shadow: 0 10px 30px rgba(239, 68, 68, 0.2);
       }
 
-      .form-input {
-         background-color: #374151;
-         border: 1px solid #4B5563;
-         color: #F3F4F6;
-         border-radius: 0.5rem;
-         padding: 0.75rem 1rem;
-         width: 100%;
-         transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .form-input:focus {
-         outline: none;
-         border-color: #EF4444;
-         box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-      }
-
-      .form-input::placeholder {
-         color: #9CA3AF;
-      }
-
       .submit-btn {
          background: linear-gradient(135deg, #EF4444, #DC2626);
          color: #FFFFFF;
@@ -234,7 +214,7 @@
             <p class="text-md md:text-lg text-gray-200">"I walked away from <span class="font-bold text-white">$15K in Amazon sales</span> because I could see the writing on the wall. My scoring system predicted exactly how it would fail - and it did. Now I use that same brutal assessment to save other entrepreneurs from the same costly mistakes."</p>
          </div>
          <div class="mt-8">
-            <button onclick="scrollToForm()" class="submit-btn text-lg px-8 py-4">
+            <button onclick="scrollToSubmission()" class="submit-btn text-lg px-8 py-4">
                GET BRUTALLY HONEST FEEDBACK NOW
             </button>
          </div>
@@ -378,25 +358,176 @@
       </div>
    </section>
 
-   <!-- Assessment Form Section -->
-   <section id="submit" class="py-20 bg-black-custom">
-      <div class="container mx-auto px-4 max-w-2xl">
-         <h2 class="section-title">Submit Your Idea for Destruction</h2>
-         <div id="assessmentForm" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-               <div>
-                  <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
-                  <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
-               </div>
-               <div>
-                  <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Your Email</label>
-                  <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
-               </div>
+   <!-- Submission Section -->
+   <section id="submission" class="py-20 bg-black-custom">
+      <div class="container mx-auto px-4 max-w-2xl text-center">
+         <h2 class="section-title">Get Your Idea Destroyed</h2>
+         <p class="text-lg text-gray-300 mb-8">The process is simple. After your secure payment, you will be redirected to a private form to submit the details of your business idea. No data is collected on this page.</p>
+
+         <div class="bg-gray-900 border border-gray-700 rounded-lg p-8">
+            <h3 class="text-3xl font-bold text-center">One-Time Brutal Assessment</h3>
+            <div class="text-center my-4">
+               <span class="text-4xl font-black text-gray-500 line-through">$197</span>
+               <span class="text-6xl font-black text-white ml-4">$97</span>
             </div>
-            <div>
-               <label for="idea_name" class="block text-sm font-medium text-gray-300 mb-1">Business Idea Name</label>
-               <input type="text" id="idea_name" name="idea_name" class="form-input" placeholder="e.g., 'Uber for Cats'" required>
+            <p class="text-center text-red-accent font-bold mb-6">50% OFF - Limited Time</p>
+            <ul class="text-gray-300 space-y-2 max-w-md mx-auto mb-8 text-left">
+               <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-red-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>Complete 9-layer analysis</li>
+               <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-red-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>Detailed failure timeline (Years 1-5)</li>
+               <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-red-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>Brutal but actionable recommendations</li>
+               <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-red-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>72-hour delivery guaranteed</li>
+               <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+                  </svg>No refunds, no hand-holding</li>
+            </ul>
+            <p class="text-center text-gray-400 mb-4">Click below to pay. You will be redirected to the submission form after payment.</p>
+            <a href="https://buy.stripe.com/00w00i3JX6M0d0jeP3bbG04" target="_blank" rel="noopener noreferrer" class="w-full submit-btn pulse-glow text-center">Destroy My Idea ($97)</a>
+            <p class="text-center text-sm text-gray-400 mt-4">Secure payment processing via Stripe • 256-bit SSL encryption</p>
+         </div>
+      </div>
+   </section>
+
+   <!-- Testimonials Section -->
+   <section class="py-20 bg-gray-900">
+      <div class="container mx-auto px-4 max-w-4xl">
+         <h2 class="section-title">Happily Rejected Clients</h2>
+         <div class="space-y-8">
+            <div class="testimonial-card">
+               <p class="text-lg text-gray-300 italic">"They absolutely destroyed my 'Uber for dog walking' idea in 3 brutal pages. Best $97 I ever spent. Saved me from wasting 2 years and $50k on something that would have failed spectacularly."</p>
+               <p class="mt-4 font-bold text-right text-white">- Sarah M., Dodged a Bullet</p>
             </div>
+            <div class="testimonial-card">
+               <p class="text-lg text-gray-300 italic">"Got a 15/100 on my crypto course idea. The analysis was so detailed I couldn't argue with it. Pivoted to something actually profitable instead."</p>
+               <p class="mt-4 font-bold text-right text-white">- Mike R., Grateful Survivor</p>
+            </div>
+            <div class="testimonial-card">
+               <p class="text-lg text-gray-300 italic">"The detailed report showed me exactly why my SaaS idea would burn through $200K in 18 months. Harsh truth, but I needed to hear it."</p>
+               <p class="mt-4 font-bold text-right text-white">- Jennifer K., Reality Check Survivor</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- FAQ Section -->
+   <section class="py-20 bg-black-custom">
+      <div class="container mx-auto px-4 max-w-4xl">
+         <h2 class="section-title">Common Questions from Future Victims</h2>
+         <div class="space-y-6">
             <div>
-               <label for="elevator_pitch" class="block text-sm font-medium text-gray-300 mb-1">30-Second Elevator Pitch</label>
-               <textarea id="elevator_pitch" name="elevator_pitch" rows="3" class="form-input" placeholder="Briefly describe your business idea." required>
+               <h3 class="font-bold text-xl text-red-accent">Q: Will you tell me how to fix my idea?</h3>
+               <p class="mt-2 text-gray-300">A: No. If your idea scores low, it's usually fundamentally flawed. I'll tell you what's wrong, not how to polish a turd.</p>
+            </div>
+            <div class="pt-4 border-t border-gray-700">
+               <h3 class="font-bold text-xl text-red-accent">Q: What if I disagree with my score?</h3>
+               <p class="mt-2 text-gray-300">A: You're welcome to disagree. The market will ultimately prove who's right.</p>
+            </div>
+            <div class="pt-4 border-t border-gray-700">
+               <h3 class="font-bold text-xl text-red-accent">Q: Do you offer refunds?</h3>
+               <p class="mt-2 text-gray-300">A: No. You're paying for brutal honesty, not validation.</p>
+            </div>
+            <div class="pt-4 border-t border-gray-700">
+               <h3 class="font-bold text-xl text-red-accent">Q: How is this different from business consultants?</h3>
+               <p class="mt-2 text-gray-300">A: Consultants want ongoing relationships. I want to save you from bad ideas quickly and cheaply.</p>
+            </div>
+            <div class="pt-4 border-t border-gray-700">
+               <h3 class="font-bold text-xl text-red-accent">Q: What if my idea scores well?</h3>
+               <p class="mt-2 text-gray-300">A: Then you get a roadmap of what could still go wrong and how to avoid it. Even good ideas fail with poor execution.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Final CTA Section -->
+   <section class="py-20 bg-red-accent">
+      <div class="container mx-auto px-4 text-center">
+         <h2 class="text-4xl font-black text-white mb-6">Still Reading? Your Idea Must Really Suck.</h2>
+         <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Stop wasting time researching and get the brutal truth in 72 hours. Your future self will thank you.</p>
+         <a href="https://buy.stripe.com/00w00i3JX6M0d0jeP3bbG04" target="_blank" rel="noopener noreferrer" class="bg-black text-white font-bold py-4 px-8 rounded-lg text-xl hover:bg-gray-900 transition-colors inline-block">
+            GET MY BRUTAL ASSESSMENT NOW
+         </a>
+         <p class="text-white mt-4 text-sm">⚠️ Price increases to $197 in 24 hours</p>
+      </div>
+   </section>
+
+   <!-- Footer -->
+   <footer class="bg-gray-900 py-12">
+      <div class="container mx-auto px-4 text-center max-w-3xl text-gray-400">
+         <h3 class="text-2xl font-bold text-white">About The Guppy Tank</h3>
+         <p class="mt-4">I'm not here to encourage your entrepreneurial dreams. I'm here to crush the bad ones before they crush you. After walking away from my own 'successful' business because I could see its fatal flaws, I built a system to help other entrepreneurs avoid the same costly mistakes.</p>
+         <p class="mt-6 font-bold text-lg text-white">The gurus sell dreams. I sell reality.</p>
+         <p class="mt-2 font-bold text-lg text-red-accent">The market doesn't care about your feelings. Neither do I.</p>
+         <div class="mt-8 pt-8 border-t border-gray-700">
+            <p class="text-sm text-gray-500">Disclaimer: This is not financial advice. Past performance does not guarantee future results. Your business idea might actually be good (unlikely, but possible).</p>
+         </div>
+         <p class="mt-4 text-sm">© 2024 The Guppy Tank. All Rights Reserved. Don't say I didn't warn you.</p>
+      </div>
+   </footer>
+
+   <script>
+      // Smooth scrolling to submission section
+      function scrollToSubmission() {
+         document.getElementById('submission').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+         });
+      }
+
+      // Show floating CTA when user scrolls past hero
+      window.addEventListener('scroll', function() {
+         const floatingCta = document.getElementById('floatingCta');
+         const heroHeight = window.innerHeight;
+         const scrollPosition = window.scrollY;
+
+         if (scrollPosition > heroHeight * 0.8) {
+            floatingCta.classList.add('visible');
+         } else {
+            floatingCta.classList.remove('visible');
+         }
+      });
+
+      // Add some interactive elements
+      document.querySelectorAll('.stat-card').forEach(card => {
+         card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.05)';
+         });
+
+         card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+         });
+      });
+
+      // Countdown timer (basic implementation for demo)
+      function updateCountdown() {
+         const now = new Date().getTime();
+         const tomorrow = new Date();
+         tomorrow.setDate(tomorrow.getDate() + 1);
+         tomorrow.setHours(0, 0, 0, 0);
+
+         const distance = tomorrow - now;
+
+         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+         const countdownElements = document.querySelectorAll('.countdown-timer p:first-child');
+         countdownElements.forEach(el => {
+            el.innerHTML = `⏰ PRICE INCREASES IN: ${hours}h ${minutes}m ${seconds}s`;
+         });
+      }
+
+      // Update countdown every second
+      setInterval(updateCountdown, 1000);
+      updateCountdown(); // Initial call
+   </script>
+
+</body>
+
+</html>
